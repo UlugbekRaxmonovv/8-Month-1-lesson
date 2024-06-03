@@ -9,6 +9,7 @@ import Loading from '../Loading/Loading';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import {useDispatch } from 'react-redux';
 import {toggleWishlistItem} from '../../componets/lip/actions/action'
+import {toggleCardItem} from '../../componets/lip/actions/action'
 
 
 const Card = () => {
@@ -43,7 +44,7 @@ const Card = () => {
                     <IoMdHeart onClick={() => dispatch(toggleWishlistItem(item))}/> <br />
                 </div>
                 <div className="card_all">
-                    <FaShoppingCart />
+                    <FaShoppingCart  onClick={() => dispatch(toggleCardItem(item))} />
                 </div>
             </div>
             <div className="Products_all">

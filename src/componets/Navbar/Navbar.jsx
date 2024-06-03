@@ -48,7 +48,7 @@ const Navbar = () => {
                 </Link>
               </li>
               <li>
-                <Link to={'/karzenka'}>
+                <Link to={'/card'}>
                   <FaShoppingCart />
                   <span>Корзинка</span>
                 </Link>

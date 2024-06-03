@@ -1,5 +1,4 @@
 import { WISHLIST } from '../actions/action';
-import { toast } from 'react-toastify';
 
 const initialState  = []
 const add = (state, action) =>{
