@@ -7,11 +7,13 @@ import { FaStar } from "react-icons/fa6";
 import axios  from '../Api/index';
 import Loading from '../Loading/Loading';
 import InfiniteScroll from 'react-infinite-scroll-component';
-import { useDispatch } from 'react-redux';
-import {WishlistCard} from '../lip/actions/action'
+import {useDispatch } from 'react-redux';
+import {toggleWishlistItem} from '../../componets/lip/actions/action'
+
 
 const Card = () => {
-    const dispatch =useDispatch()
+    const dispatch = useDispatch();
+
 
     const [products, setProducts] = useState([]);
     const [number, setNumber] = useState(0);
@@ -38,7 +40,7 @@ const Card = () => {
         <div className="Products" key={item.id}>
             <div className="card">
                 <div className="card_all">
-                    <IoMdHeart onClick={() => dispatch(WishlistCard(item))} /> <br />
+                    <IoMdHeart onClick={() => dispatch(toggleWishlistItem(item))}/> <br />
                 </div>
                 <div className="card_all">
                     <FaShoppingCart />
@@ -70,6 +72,9 @@ const Card = () => {
 
     return (
         <>
+
+         
+       
             <div className='container'>
                 {loading ? <Loading /> : null}
                 <div className="wrapper">

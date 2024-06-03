@@ -1,8 +1,10 @@
 export const WISHLIST = "WISHLIST";
 export const CARD = "CARD";
 
-export const WishlistCard = () =>{
-    return{
-        type: WISHLIST
-    }
-}    
+export const toggleWishlistItem = (payload) => {
+    return {
+        type: WISHLIST,
+        payload,
+      
+    };
+};

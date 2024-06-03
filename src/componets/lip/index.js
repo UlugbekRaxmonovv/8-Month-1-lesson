@@ -1,8 +1,8 @@
 import { legacy_createStore, combineReducers } from "redux";
-import { wishListSlice } from "../lip/Wishlist/Wishlist";
+import { wishlistReducer } from "../lip/Wishlist/Wishlist";
 
 const rootReducer = combineReducers({
-    wishListSlice
+    wishlistReducer 
 });
 
 export const store = legacy_createStore(rootReducer);

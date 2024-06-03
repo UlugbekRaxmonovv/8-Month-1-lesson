@@ -4,9 +4,12 @@ import Home from './pages/Home/Home';
 import Wishlist from './pages/Wishlist/Wishlist';
 import Card from './pages/Card/Card';
 import  Navbar from './componets/Navbar/Navbar'
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const App = () => {
   return (
     <div>
+      <ToastContainer/>
       <Navbar/>
       <Routes>
         <Route path="/" element={<Home />} />
