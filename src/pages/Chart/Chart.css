@@ -1,0 +1,19 @@
+.box_alt{
+    margin-top: 180px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+button{
+   margin:  40px 20px;
+    padding: 4px 16px;
+    background-color: rgb(0, 255, 13);
+    border: none;
+    color: white;
+}
+select{
+    border: none;
+    width: 80px;
+    border: 1px solid gray;
+    outline: none;
+    border-radius: 4px;
+}

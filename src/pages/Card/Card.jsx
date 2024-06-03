@@ -9,7 +9,6 @@ import {toggleCardItem1,toggleCardItem2,toggleCardItem3} from '../../componets/l
 const Card = () => {
     const dispatch = useDispatch();
     const state = useSelector(state => state.cardReducer.value);
-    console.log(state);
     let links = state?.map((inx) =>(
         <>
         <tr key={inx.id}>

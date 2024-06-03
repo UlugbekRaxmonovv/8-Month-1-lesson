@@ -7,12 +7,14 @@ import { PiSmileyMeltingThin } from "react-icons/pi";
 import { FaBookOpen, FaGripfire } from "react-icons/fa";
 import { VscChromeClose } from "react-icons/vsc";
 import { MdOutlineLocationOn } from "react-icons/md";
-// import useCartStore from '../context/bears'; // Ensure the correct path
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+  const state = useSelector(state => state.cardReducer.value);
+  const cards = useSelector(s => s.wishlistReducer)
   const [fix, setFix] = useState(false);
   const [count, setCount] = useState(false);
-//   const cart = useCartStore(state => state.cart);
+
 
   function setFixd() {
     if (window.scrollY >= 10) {
@@ -44,19 +46,19 @@ const Navbar = () => {
               <li>
                 <Link to={'/wishlist'}>
                   <IoMdHeart />
-                  <span>Избранное</span>
+                  <span>{cards.length}</span>
                 </Link>
               </li>
               <li>
                 <Link to={'/card'}>
                   <FaShoppingCart />
-                  <span>Корзинка</span>
+                  <span>{state.length}</span>
                 </Link>
               </li>
               <li>
-                <Link>
+                <Link to={'/chart'}>
                   <PiSmileyMeltingThin style={{ color: '#FEAF01' }} />
-                  <span>Войти</span>
+                  <span>Chart</span>
                 </Link>
               </li>
             </ul>

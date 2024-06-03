@@ -7,6 +7,7 @@ import Card from './pages/Card/Card';
 import  Navbar from './componets/Navbar/Navbar'
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Chart from './pages/Chart/Chart';
 const App = () => {
   return (
     <div>
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/card" element={<Card />} />
+        <Route path="/chart" element={<Chart />} />
       </Routes>
     </div>
   );

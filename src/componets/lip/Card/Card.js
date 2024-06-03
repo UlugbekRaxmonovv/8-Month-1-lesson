@@ -1,5 +1,5 @@
 import {CARD, INCREMENT_CART_QUANTITY, DECREMENT_CART_QUANTITY, REMOVE_ITEM_FROM_CART } from '../actions/action';
-
+import { toast } from 'react-toastify';
 const initialState = {
     value: []
 };
@@ -8,6 +8,7 @@ const LiaIdCardAltSolid = (state, action) => {
     const index = state.value.findIndex(el => el?.id === action?.payload?.id);
     if (index < 0) {
         const newState = [...state.value, { ...action.payload, quantity: 1 }];
+        confirm("Ma'lumot qushildi")
         localStorage.setItem("carts", JSON.stringify(newState));
         return { ...state, value: newState };
     }
@@ -41,6 +42,7 @@ const decrementCartQuantity = (state, action) => {
 const removeItemFromCart = (state, action) => {
     const newState = state.value.filter(el => el.id !== action.payload.id);
     localStorage.setItem("carts", JSON.stringify(newState));
+    
     return { ...state, value: newState };
 };
 
