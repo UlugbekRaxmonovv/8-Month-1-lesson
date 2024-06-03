@@ -10,8 +10,8 @@ import { MdOutlineLocationOn } from "react-icons/md";
 import { useSelector } from 'react-redux';
 
 const Navbar = () => {
-  const state = useSelector(state => state.cardReducer.value);
   const cards = useSelector(s => s.wishlistReducer)
+  const state = useSelector(state => state.cardReducer.value);
   const [fix, setFix] = useState(false);
   const [count, setCount] = useState(false);
 
@@ -25,6 +25,7 @@ const Navbar = () => {
   }
   
   window.addEventListener('scroll', setFixd);
+ 
 
   return (
     <>
@@ -46,13 +47,15 @@ const Navbar = () => {
               <li>
                 <Link to={'/wishlist'}>
                   <IoMdHeart />
-                  <span>{cards.length}</span>
+                  <span>Избранное {cards.length}</span>
                 </Link>
               </li>
               <li>
                 <Link to={'/card'}>
                   <FaShoppingCart />
-                  <span>{state.length}</span>
+                  <span>Корзинка {state.length}</span>
+
+                
                 </Link>
               </li>
               <li>
